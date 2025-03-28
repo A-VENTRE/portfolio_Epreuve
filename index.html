@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio d'Adrien VENTRE - BTS SIO SISR 2ème année</title>
+  <style>
+    /* Réinitialisation et bases */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background: #f0f2f5;
+      display: flex;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover {
+      color: #2980b9;
+    }
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    /* Barre latérale fixe */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 100vh;
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.3em;
+      border-bottom: 1px solid #7f8c8d;
+      padding-bottom: 10px;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin: 12px 0;
+    }
+    .sidebar a {
+      color: #ecf0f1;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .sidebar a:hover {
+      color: #1abc9c;
+    }
+    .separator {
+      margin: 20px 0;
+      padding-top: 10px;
+      border-top: 1px solid #7f8c8d;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      color: #bdc3c7;
+    }
+    /* Contenu principal */
+    .content {
+      margin-left: 280px;
+      padding: 30px;
+      width: calc(100% - 280px);
+      overflow-x: hidden;
+    }
+    header {
+      margin-bottom: 40px;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+    }
+    header h1 {
+      font-size: 2em;
+      color: #2c3e50;
+    }
+    header p {
+      font-size: 1.1em;
+      color: #7f8c8d;
+    }
+    /* Sections par catégorie */
+    .category-section {
+      margin-bottom: 60px;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .category-section h2 {
+      color: #2980b9;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    /* Liste des compétences */
+    .competences {
+      margin-bottom: 20px;
+    }
+    .competences ul {
+      list-style: none;
+      margin-left: 20px;
+    }
+    .competences li::before {
+      content: "▸";
+      color: #1abc9c;
+      margin-right: 8px;
+    }
+    /* Système d'onglets */
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ecf0f1;
+      margin-bottom: 10px;
+    }
+    .tab-link {
+      padding: 10px 20px;
+      background: #ecf0f1;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95em;
+      transition: background 0.3s;
+      margin-right: 5px;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab-link.active, .tab-link:hover {
+      background: #1abc9c;
+      color: #fff;
+    }
+    .tab-content {
+      display: none;
+      padding: 10px;
+      background: #f9fafb;
+      border: 1px solid #ecf0f1;
+      border-radius: 0 4px 4px 4px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-content ul {
+      list-style: none;
+      margin-left: 10px;
+    }
+    .tab-content li {
+      margin-bottom: 6px;
+      padding: 6px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .tab-content li:hover {
+      background: #e7f9f2;
+    }
+    /* Pied de page */
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #95a5a6;
+      margin-top: 40px;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 220px;
+      }
+      .content {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#cat1">Gérer le patrimoine informatique</a></li>
+      <li><a href="#cat2">Répondre aux incidents &amp; demandes</a></li>
+      <li><a href="#cat3">Développer la présence en ligne</a></li>
+      <li><a href="#cat4">Travailler en mode projet</a></li>
+      <li><a href="#cat5">Mettre à disposition des utilisateurs un service informatique</a></li>
+      <li><a href="#cat6">Organiser son développement professionnel</a></li>
+    </ul>
+    <div class="separator">Certification</div>
+    <ul>
+      <li><a href="#certification">Certification</a></li>
+    </ul>
+    <div class="separator">Parcours Citoyen</div>
+    <ul>
+      <li><a href="#parcours-citoyen">Parcours Citoyen</a></li>
+    </ul>
+  </nav>
+
+  <!-- Zone principale -->
+  <div class="content">
+    <header>
+      <h1>Portfolio d'Adrien VENTRE</h1>
+      <p>BTS SIO – OPTION SISR – 2ème année</p>
+    </header>
+
+    <!-- Catégorie 1 : Gérer le patrimoine informatique -->
+    <section id="cat1" class="category-section">
+      <h2>Gérer le patrimoine informatique</h2>
+      <div class="competences">
+        <ul>
+          <li>Recenser et identifier les ressources numériques</li>
+          <li>Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</li>
+          <li>Mettre en place et vérifier les niveaux d’habilitation associés à un service</li>
+          <li>Vérifier les conditions de la continuité d’un service informatique</li>
+          <li>Gérer des sauvegardes</li>
+          <li>Vérifier le respect des règles d’utilisation des ressources numériques</li>
+        </ul>
+      </div>
+      <div class="tabs">
+        <button class="tab-link active" data-tab="tab1-1">Formation – 1ère et 2ème année</button>
+        <button class="tab-link" data-tab="tab1-3">Stage – Première année</button>
+        <button class="tab-link" data-tab="tab1-4">Stage – Seconde année</button>
+      </div>
+      <!-- Formation – 1ère et 2ème année -->
+      <div id="tab1-1" class="tab-content active">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1vjhOMVA3A9kJr0VB9_TOP1NRHQs_Prte/view?usp=drive_link" target="_blank">STOCKAGE RAID ET SAUVEGARDE</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1gDBF2En09M7ibKHul3byK-atxfuDZUtQ?usp=drive_link" target="_blank">GLPI</a></li>
+		  <li><a href="https://drive.google.com/drive/folders/187W9fBp2iBSQTpJPjZHwJBAtt89J5oj4?usp=drive_link" target="_blank">Hebergement</a></li>
+		  <li><a href="https://docs.google.com/document/d/1K4krPcdYnG4OGUxovt0TFieXvA_L2MlW/edit#heading=h.gjdgxs" target="_blank">GLPI</a></li>
+        </ul>
+      </div>
+      <!-- Stage – Première année -->
+      <div id="tab1-3" class="tab-content">
+        <ul>
+          <li>
+            <a href="https://docs.google.com/document/d/1dmBtw8vpju5oUFtlkoS1f_FL6qUiAPn6/edit" target="_blank">
+              Gestion des Sauvegardes chez CCPDA
+            </a>
+          </li>
+          <li>
+            <a href="https://drive.google.com/drive/u/1/folders/1u00v7QKoWO3s_50ccdYhMT_-LTiM61hI" target="_blank">
+              Organisation du plan de  securisation du reseau de la CCPDA
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.google.com/spreadsheets/d/1P7tnL7wMojrpFRQ0CyZM7JX4HLD8nc03/edit?gid=1325757096#gid=1325757096" target="_blank">
+              Verification de l'espace disque sur les Hyper-V
+            </a>
+			</li>
+        </ul>
+      </div>
+      <!-- Stage – Seconde année -->
+      <div id="tab1-4" class="tab-content">
+        <ul>
+            <li>
+            <a href="https://drive.google.com/drive/u/1/folders/1u00v7QKoWO3s_50ccdYhMT_-LTiM61hI" target="_blank">
+              Déploiement une machine sur le réseau
+            </a>
+			</li>
+		    <li>
+            <a href="https://docs.google.com/document/d/1AXSKV0bKMH5_sMuvg7vlL_YFWZt5My2y/edit#heading=h.gjdgxs" target="_blank">
+              Installation d'un nouveau serveur de virtualisation
+            </a>
+			</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Catégorie 2 : Répondre aux incidents et aux demandes d’assistance et d’évolution -->
+    <section id="cat2" class="category-section">
+      <h2>Répondre aux incidents et aux demandes d’assistance et d’évolution</h2>
+      <div class="competences">
+        <ul>
+          <li>Collecter, suivre et orienter des demandes</li>
+          <li>Traiter des demandes concernant les services réseau, système et applicatifs</li>
+          <li>Traiter des demandes concernant les applications</li>
+        </ul>
+      </div>
+      <div class="tabs">
+        <button class="tab-link active" data-tab="tab2-1">Formation – 1ère et 2ème année</button>
+        
+        <button class="tab-link" data-tab="tab2-3">Stage – Seconde année</button>
+      </div>
+      <!-- Formation – 1ère et 2 année -->
+      <div id="tab2-1" class="tab-content active">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1MBfIOPoXy3do8F0oR8JZgISdZyZhLuxU/view" target="_blank">WINDOWS MALWARE HUNTER</a></li>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1gDBF2En09M7ibKHul3byK-atxfuDZUtQ" target="_blank">GLPI</a></li>
+		  <li><a href="https://drive.google.com/file/d/19ANV_ZYEBRNQF02CaiNQdOi4D8EMcNpa/view" target="_blank">Contrôle à distance</a></li>
+        </ul>
+      </div>
+      
+      <!-- Stage – Seconde année -->
+      <div id="tab2-3" class="tab-content">
+        <ul>
+          <li>
+            <a href="https://docs.google.com/document/d/1ZHkgjj-xmke6rj5__lTuUO07iGZcbC-J/edit#heading=h.gjdgxs" target="_blank">
+              Déploiement d’une machine sur le réseau
+            </a>
+          </li>
+		  <li>
+            <a href="https://docs.google.com/document/d/1Z1fl69Dlk8IQLFDFDNTCaV_bce5Q3bgm/edit?rtpof=true&sd=true&tab=t.0" target="_blank">
+              Tests d’intrusion avec Kali Linux
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Catégorie 3 : Développer la présence en ligne de l’organisation -->
+    <section id="cat3" class="category-section">
+      <h2>Développer la présence en ligne de l’organisation</h2>
+      <div class="competences">
+        <ul>
+          <li>Participer à la valorisation de l’image de l’organisation sur les médias numériques en tenant compte du cadre juridique et des enjeux économiques</li>
+          <li>Référencer les services en ligne de l’organisation et mesurer leur visibilité</li>
+          <li>Participer à l’évolution d’un site Web exploitant les données de l’organisation</li>
+        </ul>
+      </div>
+      <div class="tabs">
+        <button class="tab-link active" data-tab="tab3-1">Formation – 1ère et 2ème année</button>
+        <button class="tab-link" data-tab="tab3-2">Stage – Seconde année</button>
+      </div>
+      <!-- Formation – 1ère et 2 année -->
+      <div id="tab3-1" class="tab-content active">
+        <ul>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1bXdL2YUQ4ddit0UlXjJ0bgAX7gqXiB-k" target="_blank">Proposition Solution Hebergement</a></li>
+          <li><a href="https://docs.google.com/document/d/11EpqgqXktYKZs8yo8e0VqB6rl1RhDnWI/edit" target="_blank">Développer la présence en ligne</a></li>
+		  
+      </div>
+	        <div id="tab3-2" class="tab-content active">
+        <ul>
+          <li><a href="https://drive.google.com/drive/folders/1hLzXnxQ4dU5GDKPbQuRpV_h8LSZOGrAB?usp=drive_link" target="_blank">Refonte du Site Web Hopitaux Drome Nord
+</a></li>
+          	  
+      </div>
+    </section>
+
+    <!-- Catégorie 4 : Travailler en mode projet -->
+    <section id="cat4" class="category-section">
+      <h2>Travailler en mode projet</h2>
+      <div class="competences">
+        <ul>
+          <li>Analyser les objectifs et modalités d’organisation d’un projet</li>
+          <li>Planifier les activités</li>
+          <li>Évaluer les indicateurs de suivi d’un projet et analyser les écarts</li>
+        </ul>
+      </div>
+      <div class="tabs">
+        <button class="tab-link active" data-tab="tab4-1">Formation – 1ère année</button>
+        <button class="tab-link" data-tab="tab4-2">Stage – Première année</button>
+
+      </div>
+      <!-- Formation – 1ère année -->
+      <div id="tab4-1" class="tab-content active">
+        <ul>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1bXdL2YUQ4ddit0UlXjJ0bgAX7gqXiB-k" target="_blank">Proposition Solution Hebergement</a></li>
+        </ul>
+      </div>
+      <!-- Stage – Première année -->
+      <div id="tab4-2" class="tab-content">
+        <ul>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1u00v7QKoWO3s_50ccdYhMT_-LTiM61hI" target="_blank">Organisation du plan de  securisation du reseau de la CCPDA
+</a></li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Catégorie 5 : Mettre à disposition des utilisateurs un service informatique -->
+    <section id="cat5" class="category-section">
+      <h2>Mettre à disposition des utilisateurs un service informatique</h2>
+      <div class="competences">
+        <ul>
+          <li>Réaliser les tests d’intégration et d’acceptation d’un service</li>
+          <li>Déployer un service</li>
+          <li>Accompagner les utilisateurs dans la mise en place d’un service</li>
+        </ul>
+      </div>
+      <div class="tabs">
+        <button class="tab-link active" data-tab="tab5-1">Formation – 1ère et 2ème année</button>
+        
+        <button class="tab-link" data-tab="tab5-3">Stage – Première année</button>
+        <button class="tab-link" data-tab="tab5-4">Stage – Seconde année</button>
+      </div>
+      <!-- Formation – 1ère et 2  année -->
+      <div id="tab5-1" class="tab-content active">
+        <ul>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1bXdL2YUQ4ddit0UlXjJ0bgAX7gqXiB-k" target="_blank">Proposition Solution Hebergement</a></li>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1gDBF2En09M7ibKHul3byK-atxfuDZUtQ" target="_blank">GLPI</a></li>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1oiVwzmCRaBdW3dCquq7xCoeocWurLRdB" target="_blank">Pfsense</a></li>
+          <li><a href="https://docs.google.com/document/u/1/d/1YLOU6ixY3QUsNgt9khuePIz40O9lAF1X/edit?usp=drive_web&ouid=101389114791755406092&rtpof=true" target="_blank">ServeurTeteDeReseau</a></li>
+          <li><a href="https://docs.google.com/document/d/1yWZsId4OkK1wKlniqGgSsoevorp1zb6n/edit#heading=h.gjdgxs" target="_blank">WEB</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1tLGxUPpIwRaCJJLd4Mhw_CQDzcbApv-l?usp=drive_link" target="_blank">Portfolio</a></li>
+        </ul>
+      </div>
+      <!-- Stage – Première année -->
+      <div id="tab5-3" class="tab-content">
+        <ul>
+          <li><a href="https://docs.google.com/document/d/1j4QH-upo9sSRgimVgVS4oth0d3BCxiJ8/edit#heading=h.gjdgxs" target="_blank">Rocket BigBlueButton
+</a></li>
+        </ul>
+		 <ul>
+          <li><a href="https://docs.google.com/document/d/1xxEVVfQqTeTlRI1ZLRhYXfgnPCLUA-7O/edit?rtpof=true&sd=true" target="_blank">Installation d'un PC dans ledomaine Active Directory AD
+
+        </ul>
+      </div>
+      <!-- Stage – Seconde année -->
+      <div id="tab5-4" class="tab-content">
+        <ul>
+          <li><a href="https://docs.google.com/document/d/1ZHkgjj-xmke6rj5__lTuUO07iGZcbC-J/edit#heading=h.gjdgxs" target="_blank">Déploiement une machine sur le réseau
+</a></li>
+          <li><a href="https://docs.google.com/document/d/1AXSKV0bKMH5_sMuvg7vlL_YFWZt5My2y/edit#heading=h.gjdgxs" target="_blank">Installation d'un nouveau serveur de virtualisation
+</a></li>
+
+      </div>
+    </section>
+
+    <!-- Catégorie 6 : Organiser son développement professionnel -->
+    <section id="cat6" class="category-section">
+      <h2>Organiser son développement professionnel</h2>
+      <div class="competences">
+        <ul>
+          <li>Mettre en place son environnement d’apprentissage personnel</li>
+          <li>Mettre en œuvre des outils et stratégies de veille informationnelle</li>
+          <li>Gérer son identité professionnelle</li>
+          <li>Développer son projet professionnel</li>
+        </ul>
+      </div>
+      <div class="tabs">
+        <button class="tab-link active" data-tab="tab6-1">Formation – 1ère et 2ème année</button>
+		<button class="tab-link active" data-tab="tab6-5">Autre</button>
+      </div>
+      <!-- Formation – 1ère année -->
+      <div id="tab6-1" class="tab-content active">
+        <ul>
+          <li><a href="https://docs.google.com/document/d/1Dud7enonNqpjfEAXfccg-jnETxbP1YD9/edit" target="_blank">Veille technologique Adrien VENTRE
+</a></li>
+        </ul>
+        <ul>
+          <li><a href="https://docs.google.com/document/d/11EpqgqXktYKZs8yo8e0VqB6rl1RhDnWI/edit" target="_blank">Développer la présence en ligne
+</a></li>
+        </ul>
+      </div>
+       <!-- Autre -->
+      <div id="tab6-5" class="tab-content">
+        <ul>
+          <li>Parcours de certification</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section Certification -->
+    <section id="certification" class="category-section">
+      <h2>Certification</h2>
+      <div class="tabs">
+        <button class="tab-link active" data-tab="certif-tab1">BUT</button>
+        <button class="tab-link" data-tab="certif-tab2">Concours et Attestations</button>
+        <button class="tab-link" data-tab="certif-tab3">Cybersécurité</button>
+        <button class="tab-link" data-tab="certif-tab4">Développement</button>
+        <button class="tab-link" data-tab="certif-tab5">Réseaux</button>
+      </div>
+      <!-- Onglet BUT -->
+      <div id="certif-tab1" class="tab-content active">
+        <ul>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1PyVN4yst_UWu3p7jZNWIyyaZRe3GfjOk" target="_blank">Reseaux-d-acces-optiques-ftth.pdf</a></li>
+          <li><a href="https://drive.google.com/drive/u/1/folders/1PyVN4yst_UWu3p7jZNWIyyaZRe3GfjOk" target="_blank">objectif_ipv6.pdf</a></li>
+        </ul>
+      </div>
+      <!-- Onglet Concours et Attestations -->
+      <div id="certif-tab2" class="tab-content">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1x4rrLpWoi8Tbw-jROSXw1f0Ik4sUy6rZ/view?usp=drive_link" target="_blank">Cisco Networking Academy.pdf</a></li>
+          <li><a href="https://www.credly.com/badges/a605bc9d-62ca-4757-896c-b502bd189f6a" target="_blank">Networking Academy Learn-A-Thon 2024</a></li>
+                  </ul>
+      </div>
+      <!-- Onglet Cybersécurité -->
+      <div id="certif-tab3" class="tab-content">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1Qb2LYgMn0pYQhQrVRumSlricTQJWflI_/view?usp=drive_link" target="_blank">Cybersecurity Essentials</a></li>
+
+        </ul>
+      </div>
+      <!-- Onglet Développement -->
+      <div id="certif-tab4" class="tab-content">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1kqrJdOpvWqdhXVZ5NoafCAlgt1Z_LvCw/view?usp=drive_link" target="_blank">Python</a></li>
+        </ul>
+      </div>
+      <!-- Onglet Réseaux -->
+      <div id="certif-tab5" class="tab-content">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1rJA2uYDCgU_MikT6PY8ByH7JFSquootu/view?usp=drive_link" target="_blank">CCNA2letter.pdf</a></li>
+          <li><a href="https://drive.google.com/file/d/11_hprkBsvAjQHJV_xLEXipJYzqDWLk88/view?usp=drive_link" target="_blank">CCNA2</a></li>
+          <li><a href="https://drive.google.com/file/d/1rFW3D8-76_tlGdoOCtkd8X6VHpT514jY/view?usp=drive_link" target="_blank">Network_Defense</a></li>
+          <li><a href="https://drive.google.com/file/d/1WzGCT1PZtzlE7eiOcTU-Arvy3L1aowF4/view?usp=drive_link" target="_blank">CCNA introduction networks</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section Parcours Citoyen -->
+    <section id="parcours-citoyen" class="category-section">
+      <h2>Parcours Citoyen</h2>
+      <p>Contenu à venir.</p>
+    </section>
+
+    <footer>
+      <p>Consultez le portfolio complet via <a href="https://docs.google.com/spreadsheets/d/1a8tKS5nI0IlGlK_e2L84VutDc4v0WVzF/edit?usp=drive_link" target="_blank">Google Sheets</a></p>
+    </footer>
+  </div>
+
+  <!-- Script pour le système d'onglets -->
+  <script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        let parentTabs = link.parentElement.parentElement;
+        parentTabs.querySelectorAll('.tab-link').forEach(item => item.classList.remove('active'));
+        parentTabs.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        link.classList.add('active');
+        parentTabs.querySelector('#' + link.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
